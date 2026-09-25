@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Garante que o site funcione bem em celular -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boletim Digital</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Cabeçalho com título e subtítulo -->
+  <header class="cabecalho">
+    <h1>Boletim Digital</h1>
+    <p class="subtitulo">8º Ano — Estudante Exemplo</p>
+  </header>
+
+  <main class="conteudo">
+
+    <!-- Área dos cards de resumo (o JS preenche os valores) -->
+    <section class="cards-resumo">
+      <div class="card">
+        <span class="card-titulo">Média geral</span>
+        <span class="card-valor" id="media-geral">—</span>
+      </div>
+
+      <div class="card">
+        <span class="card-titulo">Total de faltas</span>
+        <span class="card-valor" id="total-faltas">—</span>
+      </div>
+
+      <div class="card">
+        <span class="card-titulo">Bom desempenho</span>
+        <span class="card-valor" id="qtd-bom">—</span>
+      </div>
+
+      <div class="card">
+        <span class="card-titulo">Precisam de atenção</span>
+        <span class="card-valor" id="qtd-atencao">—</span>
+      </div>
+
+      <div class="card">
+        <span class="card-titulo">Frequência</span>
+        <span class="card-valor" id="frequencia">—</span>
+      </div>
+    </section>
+
+    <!-- Tabela responsiva com as disciplinas -->
+    <section class="area-tabela">
+      <h2>Notas por disciplina</h2>
+
+      <div class="tabela-rolavel">
+        <table class="tabela-boletim">
+          <thead>
+            <tr>
+              <th>Disciplina</th>
+              <th>1º Tri</th>
+              <th>2º Tri</th>
+              <th>3º Tri</th>
+              <th>Média</th>
+              <th>Faltas</th>
+              <th>Situação</th>
+            </tr>
+          </thead>
+          <!-- O JavaScript vai inserir as linhas aqui dentro -->
+          <tbody id="corpo-tabela"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
