@@ -165,3 +165,117 @@ body {
     font-size: 0.85rem;
   }
 }
+
+/* ===== Área de acesso por PIN ===== */
+.area-pin {
+  background-color: var(--branco);
+  border: 1px solid var(--lilas-borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: 24px 20px;
+  max-width: 420px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.area-pin h2 {
+  font-size: 1.3rem;
+  color: var(--roxo-escuro);
+  text-align: center;
+}
+
+.pin-info {
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+  text-align: center;
+}
+
+.area-pin label {
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+  font-weight: 600;
+}
+
+.area-pin input {
+  padding: 10px 12px;
+  border: 1px solid var(--lilas-borda);
+  border-radius: 8px;
+  font-size: 1rem;
+  color: var(--texto);
+  outline: none;
+}
+
+.area-pin input:focus {
+  border-color: var(--roxo);
+  box-shadow: 0 0 0 2px rgba(106, 63, 181, 0.15);
+}
+
+.area-pin button,
+.area-acoes button {
+  background-color: var(--roxo);
+  color: var(--branco);
+  border: none;
+  border-radius: 8px;
+  padding: 11px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.area-pin button:hover,
+.area-acoes button:hover {
+  background-color: var(--roxo-escuro);
+}
+
+.area-pin button:disabled,
+.area-acoes button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.pin-mensagem,
+.acao-mensagem {
+  font-size: 0.9rem;
+  text-align: center;
+  min-height: 1.2em;
+  color: #c0392b;
+}
+
+.pin-mensagem.sucesso,
+.acao-mensagem.sucesso {
+  color: #1f8a4c;
+}
+
+/* ===== Botões de ação do boletim ===== */
+.area-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+/* ===== Campos de edição na tabela ===== */
+.tabela-boletim input.campo-edicao {
+  width: 70px;
+  padding: 6px 8px;
+  border: 1px solid var(--lilas-borda);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--texto);
+  outline: none;
+}
+
+.tabela-boletim input.campo-edicao:focus {
+  border-color: var(--roxo);
+  box-shadow: 0 0 0 2px rgba(106, 63, 181, 0.15);
+}
+
+.tabela-boletim input.campo-edicao.invalido {
+  border-color: #c0392b;
+  background-color: #fdecea;
+}

@@ -17,56 +17,79 @@
 
   <main class="conteudo">
 
-    <!-- Área dos cards de resumo (o JS preenche os valores) -->
-    <section class="cards-resumo">
-      <div class="card">
-        <span class="card-titulo">Média geral</span>
-        <span class="card-valor" id="media-geral">—</span>
-      </div>
-
-      <div class="card">
-        <span class="card-titulo">Total de faltas</span>
-        <span class="card-valor" id="total-faltas">—</span>
-      </div>
-
-      <div class="card">
-        <span class="card-titulo">Bom desempenho</span>
-        <span class="card-valor" id="qtd-bom">—</span>
-      </div>
-
-      <div class="card">
-        <span class="card-titulo">Precisam de atenção</span>
-        <span class="card-valor" id="qtd-atencao">—</span>
-      </div>
-
-      <div class="card">
-        <span class="card-titulo">Frequência</span>
-        <span class="card-valor" id="frequencia">—</span>
-      </div>
+    <!-- Área de acesso por PIN (escondida após o login) -->
+    <section class="area-pin" id="area-pin">
+      <h2>Acessar boletim</h2>
+      <p class="pin-info">Série: 8º Ano &nbsp;|&nbsp; Turma: 8A &nbsp;|&nbsp; Chamada: 36</p>
+      <label for="campo-pin">PIN</label>
+      <input type="password" id="campo-pin" inputmode="numeric" autocomplete="off" placeholder="Digite seu PIN" />
+      <button type="button" id="btn-entrar">Entrar</button>
+      <p class="pin-mensagem" id="pin-mensagem"></p>
     </section>
 
-    <!-- Tabela responsiva com as disciplinas -->
-    <section class="area-tabela">
-      <h2>Notas por disciplina</h2>
+    <!-- Conteúdo do boletim (escondido antes do login) -->
+    <div id="area-boletim" class="area-boletim" hidden>
 
-      <div class="tabela-rolavel">
-        <table class="tabela-boletim">
-          <thead>
-            <tr>
-              <th>Disciplina</th>
-              <th>1º Tri</th>
-              <th>2º Tri</th>
-              <th>3º Tri</th>
-              <th>Média</th>
-              <th>Faltas</th>
-              <th>Situação</th>
-            </tr>
-          </thead>
-          <!-- O JavaScript vai inserir as linhas aqui dentro -->
-          <tbody id="corpo-tabela"></tbody>
-        </table>
+      <!-- Área dos cards de resumo (o JS preenche os valores) -->
+      <section class="cards-resumo">
+        <div class="card">
+          <span class="card-titulo">Média geral</span>
+          <span class="card-valor" id="media-geral">—</span>
+        </div>
+
+        <div class="card">
+          <span class="card-titulo">Total de faltas</span>
+          <span class="card-valor" id="total-faltas">—</span>
+        </div>
+
+        <div class="card">
+          <span class="card-titulo">Bom desempenho</span>
+          <span class="card-valor" id="qtd-bom">—</span>
+        </div>
+
+        <div class="card">
+          <span class="card-titulo">Precisam de atenção</span>
+          <span class="card-valor" id="qtd-atencao">—</span>
+        </div>
+
+        <div class="card">
+          <span class="card-titulo">Frequência</span>
+          <span class="card-valor" id="frequencia">—</span>
+        </div>
+      </section>
+
+      <!-- Botões de ação -->
+      <div class="area-acoes">
+        <button type="button" id="btn-alterar">Alterar dados</button>
+        <button type="button" id="btn-salvar" hidden>Salvar alterações</button>
+        <button type="button" id="btn-cancelar" hidden>Cancelar</button>
       </div>
-    </section>
+      <p class="acao-mensagem" id="acao-mensagem"></p>
+
+      <!-- Tabela responsiva com as disciplinas -->
+      <section class="area-tabela">
+        <h2>Notas por disciplina</h2>
+
+        <div class="tabela-rolavel">
+          <table class="tabela-boletim">
+            <thead>
+              <tr>
+                <th>Disciplina</th>
+                <th>1º Tri</th>
+                <th>2º Tri</th>
+                <th>3º Tri</th>
+                <th>Média</th>
+                <th>Faltas</th>
+                <th>Situação</th>
+              </tr>
+            </thead>
+            <!-- O JavaScript vai inserir as linhas aqui dentro -->
+            <tbody id="corpo-tabela"></tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
 
   </main>
 
