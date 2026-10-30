@@ -279,3 +279,113 @@ body {
   border-color: #c0392b;
   background-color: #fdecea;
 }
+
+/* ============================================================
+   ÁREA DE GRÁFICOS (novo)
+   Adicionado no final para não afetar estilos existentes.
+   ============================================================ */
+
+.area-graficos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.grafico-card {
+  background-color: var(--branco);
+  border: 1px solid var(--lilas-borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: 16px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0; /* permite encolher sem estourar o grid */
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.grafico-titulo {
+  font-size: 1rem;
+  color: var(--roxo-escuro);
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.grafico-container {
+  position: relative;
+  width: 100%;
+  height: 220px;
+}
+
+/* Card de média por disciplina precisa de mais altura (≈15 disciplinas) */
+.grafico-container-alto {
+  height: 340px;
+}
+
+.grafico-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* Badge "Perigo" (aparece só quando total de faltas >= referência interna) */
+.grafico-badge-perigo {
+  display: inline-block;
+  background-color: #c0392b;
+  color: var(--branco);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  line-height: 1;
+}
+
+.grafico-badge-perigo[hidden] {
+  display: none;
+}
+
+/* Card de faltas em estado crítico ganha destaque visual */
+.grafico-card.perigo {
+  border-color: #c0392b;
+  box-shadow: 0 0 0 1px #c0392b, 0 2px 10px rgba(192, 57, 43, 0.18);
+}
+
+/* ===== Responsividade dos gráficos ===== */
+
+/* Tablet: 2 colunas, o card de média por disciplina ocupa a linha inteira
+   (porque é mais alto e tem muitos itens) */
+@media (max-width: 900px) {
+  .area-graficos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grafico-card:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .grafico-container-alto {
+    height: 380px;
+  }
+}
+
+/* Celular: 1 coluna, todos empilhados */
+@media (max-width: 600px) {
+  .area-graficos {
+    grid-template-columns: 1fr;
+  }
+
+  .grafico-container {
+    height: 220px;
+  }
+
+  .grafico-container-alto {
+    height: 420px;
+  }
+}

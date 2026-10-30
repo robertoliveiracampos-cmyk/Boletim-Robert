@@ -58,6 +58,35 @@
         </div>
       </section>
 
+      <!-- Área dos gráficos (nova) -->
+      <section class="area-graficos">
+
+        <article class="grafico-card">
+          <h2 class="grafico-titulo">Média por disciplina</h2>
+          <div class="grafico-container grafico-container-alto">
+            <canvas id="graficoMediasDisciplinas"></canvas>
+          </div>
+        </article>
+
+        <article class="grafico-card">
+          <h2 class="grafico-titulo">Evolução da média geral</h2>
+          <div class="grafico-container">
+            <canvas id="graficoEvolucaoTrimestres"></canvas>
+          </div>
+        </article>
+
+        <article class="grafico-card" id="card-grafico-faltas">
+          <h2 class="grafico-titulo">
+            Faltas por trimestre
+            <span id="estadoFaltas" class="grafico-badge-perigo" hidden>Perigo</span>
+          </h2>
+          <div class="grafico-container">
+            <canvas id="graficoFaltasTrimestres"></canvas>
+          </div>
+        </article>
+
+      </section>
+
       <!-- Botões de ação -->
       <div class="area-acoes">
         <button type="button" id="btn-alterar">Alterar dados</button>
@@ -93,6 +122,8 @@
 
   </main>
 
+  <!-- Chart.js (CDN) — deve vir antes do script.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
